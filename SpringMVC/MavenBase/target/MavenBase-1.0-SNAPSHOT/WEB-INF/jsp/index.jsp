@@ -16,5 +16,6 @@
     </head>
     <body>
         <h1 class="my_color">Hello World!</h1>
+        <a href="/MavenBase/second">Toinen</a>
     </body>
 </html>

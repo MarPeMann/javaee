@@ -13,5 +13,10 @@ public class DefaultController {
     public String index(ModelMap map){
         
         return "index";
-    } 
+    }
+   @RequestMapping(value="/second", method=RequestMethod.GET)
+    public String second(ModelMap map){
+        
+        return "second";
+    }
 }
