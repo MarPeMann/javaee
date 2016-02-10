@@ -1,0 +1,19 @@
+1 projektin päältä: new->other->Hibernate->Hibernate Configuratio wizard->next (annetaan olla arvot)->next(database connection: ...opiframe)->finish
+
+2 configuration properties add->show_sql:true, format_sql:true
+
+3. new->other->hibernate->new reverse engineerin wizard: Folder src\main\resources->next->valitaan taulut
+
+4 Source packaged->new java package com.base.util
+
+5. luotuun packageen: new -> other -> hibernate -> hibernate util -> Class name:HibernateUtil
+
+6. Source packages: new->other->hibernate->Hibernate mapping files and POJOs from database->Package:com.base.models
+
+7. Maven repositorysta: MySql Connector->lisätään dependency pom.xml -tiedostoon
+
+8. Dependencies hakemistossa: hiiren oikea->download declared dependencies
+
+9. Clean and build
+
+10 new package com.base.DAO -> new java class taulunnimiDao
