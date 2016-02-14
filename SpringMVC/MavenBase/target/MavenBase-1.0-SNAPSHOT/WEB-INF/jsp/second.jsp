@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
         <title>Teacher</title>
     </head>
     <body>
@@ -34,7 +35,7 @@
                 
             </form:form>
                 <p>${save_info}</p>
-                <table>
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Name</th>
