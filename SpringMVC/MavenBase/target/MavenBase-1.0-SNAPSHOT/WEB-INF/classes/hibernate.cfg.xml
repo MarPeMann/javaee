@@ -13,5 +13,7 @@
     <mapping resource="com/base/models/Course.hbm.xml"/>
     <mapping resource="com/base/models/Teachers.hbm.xml"/>
     <mapping resource="com/base/models/RelTable.hbm.xml"/>
+    <mapping resource="com/base/models/User.hbm.xml"/>
+    <mapping resource="com/base/models/UserRoles.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
