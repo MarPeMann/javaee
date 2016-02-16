@@ -10,29 +10,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="resources/css/styles.css" />
         <script src="resources/js/scripts.js"></script>
         <title>Start Page</title>
     </head>
     <body>
+        <%@include file="header.jsp" %>
         <h1 class="my_color">Hello World!</h1>
         <a href="/second">Toinen</a>
-        <div>
+       
+                    
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4">
                     <h1>Login</h1>
-            <form:form action="/login" method="POST">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-                
-                <input type="text" id="username" name="username"/><br/>
-                
-                
-                <input type="password" id="password" name="password"/><br/>
+                    <form:form action="/login" method="POST">
 
-                
-                <input type="submit" value="Login"/>
-                
-                
-            </form:form>
+                        <label>Username</label>
+                        <input class="form-control" type="text" id="username" name="username"/><br/>
+
+                        <label>Password</label>
+                        <input class="form-control" type="password" id="password" name="password"/><br/>
+
+
+                        <input class="btn btn-primary" type="submit" value="Login"/>
+
+
+                    </form:form>
+                        <p style="color:red;">${login_error}</p>
+                    </div>
+                </div>
         </div>
     </body>
 </html>

@@ -10,32 +10,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" />
         <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("css/bootstrap.min.css"))'>
         <title>Teacher</title>
     </head>
     <body>
-        <div>
+            <%@include file="header.jsp" %>
             <h1>Add new teacher information</h1>
-            <form:form action="/teacher" method="POST" modelAttribute="teacher">
-                <form:label path="">Name:</form:label><br/>
-                <form:input path="TName"></form:input><br/>
-                
-                <form:label path="">Email:</form:label><br/>
-                <form:input path="email"></form:input><br/>
-                               
-                <form:label path="">Phone:</form:label><br/>
-                <form:input path="phone"></form:input><br/>
-                
-                <form:label path="">Subject:</form:label><br/>
-                <form:input path="TSubject"></form:input><br/>
-                
-                <input type="submit" value="Save teacher"/>
-                
-                
-            </form:form>
-                <p>${save_info}</p>
-                <table class="table table-striped">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form:form action="/admin/teacher" method="POST" modelAttribute="teacher">
+                            <form:label path="">Name:</form:label><br/>
+                            <form:input class="form-control" path="TName"></form:input><br/>
+
+                            <form:label path="">Email:</form:label><br/>
+                            <form:input class="form-control" path="email"></form:input><br/>
+
+                            <form:label path="">Phone:</form:label><br/>
+                            <form:input class="form-control" path="phone"></form:input><br/>
+
+                            <form:label path="">Subject:</form:label><br/>
+                            <form:input class="form-control" path="TSubject"></form:input><br/>
+
+                            <input class="btn btn-warning" type="submit" value="Save teacher"/>
+
+
+                        </form:form>
+                    </div>
+                    <div class="col-md-8">
+                <!-- <p>${save_info}</p> -->
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -55,6 +62,8 @@
                         </c:forEach>
                     </tbody>
                 </table>
-        </div>
+                </div> 
+            </div> <!-- row -->
+        </div> <!--container -->
     </body>
 </html>
