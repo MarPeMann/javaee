@@ -7,11 +7,12 @@ package com.base.controller;
 
 import com.base.DAO.studentDAO;
 import com.base.models.Students;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
@@ -23,27 +24,27 @@ public class StudentController {
     @RequestMapping(value="/admin/student", method=RequestMethod.GET)
     public String RenderStudent(ModelMap map){
         map.addAttribute("isLogged", true);
-        map.addAttribute("students", new Students());
+        map.addAttribute("student", new Students());
         try {
-           map.addAttribute("students", studentDAO.getStudents());
+           map.addAttribute("student", studentDAO.getStudents());
        } catch (Exception e) {
            e.printStackTrace();
        }
         return "student";
     }
     
-    @RequestMapping(value="/admin/addstudent", method=RequestMethod.POST)
-    public String addNewStudent(@ModelAttribute("students") Students students, ModelMap map){
+    @RequestMapping(value="/admin/student", method=RequestMethod.POST)
+    public String addNewStudent(@ModelAttribute("student") Students student, ModelMap map){
         map.addAttribute("isLogged", true);
         try {
-            studentDAO.addStudent(students);
-            map.addAttribute("save_info", "student added");
+            studentDAO.addStudent(student);
+            map.addAttribute("students", studentDAO.getStudents());
         } catch (Exception e) {
-            map.addAttribute("save_info", "Database error");
+            //map.addAttribute("save_info", "Database error");
             e.printStackTrace();
         }
-        System.out.println(students.getSName());
-        return "student";
+        //System.out.println(student.getSName());
+        return "redirect:/admin/student";
     }
     
 }

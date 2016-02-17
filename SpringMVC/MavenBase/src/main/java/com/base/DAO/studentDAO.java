@@ -8,6 +8,7 @@ package com.base.DAO;
 import com.base.models.Students;
 import com.base.util.HibernateUtil;
 import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -34,12 +35,13 @@ public class studentDAO {
         public static List<Students> getStudents() throws Exception{
         Session session = HibernateUtil.getSessionFactory().openSession();
         
-        Query query = session.createQuery("from Students");
-        List<Students> lst = query.list();
+        Criteria criteria = session.createCriteria(Students.class);
+        
+        List<Students> std = criteria.list();
         
         session.close();
         
-        return lst;
+        return std;
     }
     
 }

@@ -32,18 +32,8 @@ public class DefaultController {
        } catch (Exception e) {
            e.printStackTrace();
        }
-        
-//        Teachers s = new Teachers();
-//        s.setTName("Jimmy Gambina");
-//        s.setTSubject("Programming");
-//        s.setEmail("jg@jg.com");
-//        s.setPhone("2345234");
-//        try {
-//           teacherDAO.addTeacher(s);
-//       } catch (Exception e) {
-//       }
-        
-        return "second";
+ 
+       return "second";
     }
     @RequestMapping(value="/admin/teacher", method=RequestMethod.POST)
     public String addNewTeacher(@ModelAttribute("teacher") Teachers teach, ModelMap map){

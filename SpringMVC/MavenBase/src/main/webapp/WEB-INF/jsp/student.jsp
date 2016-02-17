@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,25 +19,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <form:form action="/admin/student" method="POST" modelAttribute="students">
-                            <form:label path="">Name:</form:label><br/>
-                            <form:input class="form-control" path="SName"></form:input><br/>
-                            
-                            <form:label path="">Address:</form:label><br/>
-                            <form:input class="form-control" path="Address"></form:input><br/>
+                        
+                   <form:form action="/admin/student" method="POST" modelAttribute="student">
+                       <form:label path="">Name</form:label><br/>
+                       <form:input cssClass="form-control" path="SName"></form:input><br/> 
+                       <form:label path="">Address</form:label><br/>
+                       <form:input cssClass="form-control" path="address"></form:input><br/>
+                       <form:label path="">Email</form:label><br/>
+                       <form:input cssClass="form-control" path="email"></form:input><br/>
+                       <form:label path="">Phone</form:label><br/>
+                       <form:input cssClass="form-control" path="phone"></form:input><br/>
+                       <input class="btn btn-primary" type="submit" value="Save Student"/>
+                   </form:form>
+                        
 
-                            <form:label path="">Email:</form:label><br/>
-                            <form:input class="form-control" path="email"></form:input><br/>
-
-                            <form:label path="">Phone:</form:label><br/>
-                            <form:input class="form-control" path="phone"></form:input><br/>
-
-                         
-
-                            <input class="btn btn-warning" type="submit" value="Save student"/>
-
-
-                        </form:form>
                     </div>
                     <div class="col-md-8">
                 <!-- <p>${save_info}</p> -->
@@ -51,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="student" items="${students}">
+                        <c:forEach var="student" items="${student}">
                             <tr>
                                 <td>${student.getSName()}</td>
                                 <td>${student.getAddress()}</td>
